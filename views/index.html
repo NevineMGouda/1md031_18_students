@@ -1,9 +1,146 @@
+
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>DELI-VERY</title>
-    </head>
-    <body>
-        <h1>Hello World!!!</h1>
-    </body>
+
+<!--<link rel="stylesheet" href="css/reset.css">-->
+<link rel="stylesheet" href="css/style.css">
+
+<link rel="icon"
+      type="image/png"
+      href="https://images.vexels.com/media/users/3/152411/isolated/preview/4a22d435331dde73ae0f1cebbdbaacff-double-burger-icon-by-vexels.png">
+
+<head>
+    <title>BurgerJoint</title>
+    <meta charset="utf-8"/>
+
+</head>
+
+<body>
+
+<ul id="nb">
+    <li><a href="#welcome">Home</a></li>
+    <li><a class="active" href="#order">Order</a></li>
+    <li><a href="#contact">Contact Information</a></li>
+</ul>
+
+<div style="margin-left:20%;padding:1px 5px;height:1000px;">
+    <section id="welcome">
+    <img id="wim" src="https://d2yk4sockbjvo.cloudfront.net/wp-content/uploads/2015/02/umami-burger-location-santa-monica-1-1.jpg" alt="Span">
+    <h1 id="wt">Welcome to BurgerJoint</h1>
+    </section>
+    <section id="order">
+        <h2>Order Burgers</h2>
+        <p>This is where you choose your desired burgers.</p>
+        <table align="center">
+            <thead>
+            <tr>
+                <th> <span class="bn"> Chipotle Mac and Cheese Beef Burger </span> </th>
+                <th> <span class="bn"> Buffalo Chicken Burger </span> </th>
+                <th> <span class="bn"> Spicy Fish Burger </span> </th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><img src="https://sifu.unileversolutions.com/image/en-AU/recipe-topvisual/2/1260-709/chipotle-mac-and
+                    -cheese-beef-burger-50211703.jpg" alt="Span" title="Chipotle Mac N' Cheese" ></td>
+                <td><img src="https://www.chatelaine.com/wp-content/uploads/2017/05/Buffalo-chicken-burger-recipe.jpg"
+                         alt="Span" title="Buffalo Chicken Burger" style="padding-left:60px;"></td>
+                <td><img src="http://www.7oceans-group.com/wp-content/uploads/2016/06/Fish-Burger-Patty_01.jpg"
+                         alt="Span" title="Spicy Fish Burger" ></td>
+            </tr>
+            <tr>
+                <td>
+                    <ul>
+                        <li>1.2 KG Beef mince (20% Fat)</li>
+                        <li>Minced Sausage</li>
+                        <li>Cheddar & Parmesan Cheese (contains <span class="gl">lactose</span>)</li>
+                        <li>Dried macaroni</li>
+                        <li>Brown onion</li>
+                    </ul>
+                </td>
+
+                <td>
+                    <ul>
+                        <li>900g Ground Chicken</li>
+                        <li>Mayonnaise (contains <span class="gl">glucose</span>)</li>
+                        <li>Pickles</li>
+                        <li>Buffalo Wing Sauce (contains <span class="gl">lactose</span>)</li>
+                        <li>Onion</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>800g Fish Fillet</li>
+                        <li>Tartare Sauce</li>
+                        <li>Jalapeno</li>
+                        <li>Lettuce</li>
+                        <li>Red onion</li>
+                    </ul>
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Information</h2>
+        <p>This is where you provide required information to finish your order.</p>
+        <main>
+            <form>
+                <fieldset>
+                    <p>
+                        <label for="fullname">Fullname</label><br>
+                        <input type="text" id="fullname" name="fn" required="required" placeholder="First and Last Name" maxlength="50">
+                    </p>
+                    <p>
+                        <label for="email">Email</label><br>
+                        <input type="email" id="email" name="em" required="required" placeholder="E-mail Address" maxlength="50">
+                    </p>
+                    <p>
+                        <label for="street">Street</label><br>
+
+                        <input type="text" id="street" name="sn" placeholder="Street Name">
+                    </p>
+                    <p>
+                        <label for="house">House</label><br>
+                        <input type="text" id="house" name="hn" placeholder="House Number">
+                    </p>
+                    <p>
+                        <label for="payment">Payment Method</label><br>
+                        <select id="payment" name="pm">
+                            <option disabled selected value> -- select an option -- </option>
+                            <option>Cash on Delivery</option>
+                            <option>Credit Card</option>
+                            <option>Gift Card</option>
+                            <option>Digital Wallet</option>
+                        </select>
+                    </p>
+                    <p>
+                        <h4>Gender</h4>
+                        <input type="radio" id="male" name="gender" value="male">
+                        <label for="male">Male</label><br>
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Female</label><br>
+                        <input type="radio" id="other" name="gender" value="other">
+                        <label for="other">Other</label><br>
+                        <input type="radio" id="nonbinary" name="gender" value="nonbinary">
+                        <label for="nonbinary">Non-Binary</label><br>
+                        <input type="radio" id="undisclosed" name="gender" value="undisclosed" checked="checked">
+                        <label for="undisclosed">Undisclosed</label>
+                    </p>
+                </fieldset>
+                <br>
+                <button type="submit" class="button button2"><img src="https://cdn1.iconfinder.com/data/icons/ios-edge-line-3/25/Delivered-512.png"
+                width = "40" align="center"> Place My Order!</button>
+
+            </form>
+        </main>
+    </section>
+</div>
+
+</body>
+
 </html>
+            
