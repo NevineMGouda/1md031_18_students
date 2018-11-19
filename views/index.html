@@ -2,12 +2,14 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!--<link rel="stylesheet" href="css/reset.css">-->
 <link rel="stylesheet" href="css/style.css">
+<script src="https://vuejs.org/js/vue.js"></script>
+<script src="js/js_script.js"></script>
+<script src="js/vue_script.js"></script>
 
-<link rel="icon"
+    <link rel="icon"
       type="image/png"
-      href="https://images.vexels.com/media/users/3/152411/isolated/preview/4a22d435331dde73ae0f1cebbdbaacff-double-burger-icon-by-vexels.png">
+      href=" ">
 
 <head>
     <title>BurgerJoint</title>
@@ -18,70 +20,71 @@
 <body>
 
 <ul id="nb">
-    <li><a href="#welcome">Home</a></li>
-    <li><a class="active" href="#order">Order</a></li>
+    <li><a class="active" href="#welcome">Home</a></li>
+    <li><a href="#order">Order</a></li>
     <li><a href="#contact">Contact Information</a></li>
 </ul>
 
 <div style="margin-left:20%;padding:1px 5px;height:1000px;">
     <section id="welcome">
-    <img id="wim" src="https://d2yk4sockbjvo.cloudfront.net/wp-content/uploads/2015/02/umami-burger-location-santa-monica-1-1.jpg" alt="Span">
-    <h1 id="wt">Welcome to BurgerJoint</h1>
+        <div>
+            <img id="wim" src="https://d2yk4sockbjvo.cloudfront.net/wp-content/uploads/2015/02/umami-burger-location-santa-monica-1-1.jpg"
+                 alt="Span">
+            <h1 id="wt">Welcome to BurgerJoint</h1>
+        </div>
+
     </section>
     <section id="order">
         <h2>Order Burgers</h2>
         <p>This is where you choose your desired burgers.</p>
-        <table align="center">
-            <thead>
-            <tr>
-                <th> <span class="bn"> Chipotle Mac and Cheese Beef Burger </span> </th>
-                <th> <span class="bn"> Buffalo Chicken Burger </span> </th>
-                <th> <span class="bn"> Spicy Fish Burger </span> </th>
-
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td><img src="https://sifu.unileversolutions.com/image/en-AU/recipe-topvisual/2/1260-709/chipotle-mac-and
-                    -cheese-beef-burger-50211703.jpg" alt="Span" title="Chipotle Mac N' Cheese" ></td>
-                <td><img src="https://www.chatelaine.com/wp-content/uploads/2017/05/Buffalo-chicken-burger-recipe.jpg"
-                         alt="Span" title="Buffalo Chicken Burger" style="padding-left:60px;"></td>
-                <td><img src="http://www.7oceans-group.com/wp-content/uploads/2016/06/Fish-Burger-Patty_01.jpg"
-                         alt="Span" title="Spicy Fish Burger" ></td>
-            </tr>
-            <tr>
-                <td>
-                    <ul>
-                        <li>1.2 KG Beef mince (20% Fat)</li>
-                        <li>Minced Sausage</li>
-                        <li>Cheddar & Parmesan Cheese (contains <span class="gl">lactose</span>)</li>
-                        <li>Dried macaroni</li>
-                        <li>Brown onion</li>
-                    </ul>
-                </td>
-
-                <td>
-                    <ul>
-                        <li>900g Ground Chicken</li>
-                        <li>Mayonnaise (contains <span class="gl">glucose</span>)</li>
-                        <li>Pickles</li>
-                        <li>Buffalo Wing Sauce (contains <span class="gl">lactose</span>)</li>
-                        <li>Onion</li>
-                    </ul>
-                </td>
-                <td>
-                    <ul>
-                        <li>800g Fish Fillet</li>
-                        <li>Tartare Sauce</li>
-                        <li>Jalapeno</li>
-                        <li>Lettuce</li>
-                        <li>Red onion</li>
-                    </ul>
-                </td>
-            </tr>
-
-            </tbody>
-        </table>
+        <div class="container">
+            <div class="fixed"><span class="bn"> Chipotle Mac N' Cheese Beef </span></div>
+            <div class="fixed"><span class="bn"> Buffalo Chicken  </span> </div>
+            <div class="fixed"><span class="bn"> Spicy Fish  </span></div>
+        </div>
+        <div class="container">
+            <div class="fixed">
+                <img src="https://sifu.unileversolutions.com/image/en-AU/recipe-topvisual/2/1260-709/
+            chipotle-mac-and-cheese-beef-burger-50211703.jpg" alt="Span" title="Chipotle Mac N' Cheese" >
+            </div>
+            <div class="fixed">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMGtS0dpiYbB3LSucaWUuoRV5zKWnduoIpHzxMXIT2VlRp56XZ"
+                alt="Span" title="Buffalo Chicken Burger" >
+            </div>
+            <div class="fixed">
+                <img src="http://www.7oceans-group.com/wp-content/uploads/2016/06/Fish-Burger-Patty_01.jpg"
+                                    alt="Span" title="Spicy Fish Burger" >
+            </div>
+        </div>
+        <div class="container">
+            <div class="fixed">
+                <ul>
+                    <li>400g Beef mince (20% Fat)</li>
+                    <li>Minced Sausage</li>
+                    <li>Cheddar & Parmesan Cheese (contains <span class="gl">lactose</span>)</li>
+                    <li>Dried macaroni</li>
+                    <li>Brown onion</li>
+                </ul>
+            </div>
+            <div class="fixed">
+                <ul>
+                    <li>300g Ground Chicken</li>
+                    <li>Mayonnaise (contains <span class="gl">glucose</span>)</li>
+                    <li>Pickles</li>
+                    <li>Buffalo Wing Sauce (contains <span class="gl">lactose</span>)</li>
+                    <li>Onion</li>
+                </ul>
+            </div>
+            <div class="fixed">
+                <ul>
+                    <li>250g Fish Fillet</li>
+                    <li>Tartare Sauce</li>
+                    <li>Jalapeno</li>
+                    <li>Lettuce</li>
+                    <li>Red onion</li>
+                </ul>
+            </div>
+        </div>
     </section>
 
     <section id="contact">
