@@ -7,7 +7,7 @@
 <script src="js/menu.js"></script>
 <script src="https://vuejs.org/js/vue.js"></script>
 <script src="js/js_script.js" defer></script>
-<script src="js/vue_script.js"></script>
+<script src="js/vue_script.js" defer></script>
 
     <link rel="icon"
       type="image/png"
@@ -47,7 +47,7 @@
         <h2>Contact Information</h2>
         <p>This is where you provide required information to finish your order.</p>
         <main>
-            <form>
+            <form id="contact_id">
                 <fieldset>
                     <p>
                         <label for="fullname">Fullname</label><br>
@@ -60,15 +60,15 @@
                     <p>
                         <label for="street">Street</label><br>
 
-                        <input type="text" id="street" name="sn" placeholder="Street Name">
+                        <input type="text" id="street" name="sn" placeholder="Street Name" required="required">
                     </p>
                     <p>
                         <label for="house">House</label><br>
-                        <input type="text" id="house" name="hn" placeholder="House Number">
+                        <input type="text" id="house" name="hn" placeholder="House Number" required="required">
                     </p>
                     <p>
                         <label for="payment">Payment Method</label><br>
-                        <select id="payment" name="pm">
+                        <select id="payment" name="pm" required>
                             <option disabled selected value> -- select an option -- </option>
                             <option>Cash on Delivery</option>
                             <option>Credit Card</option>
@@ -91,10 +91,18 @@
                     </p>
                 </fieldset>
                 <br>
-                <button type="submit" class="button button2"><img src="https://cdn1.iconfinder.com/data/icons/ios-edge-line-3/25/Delivered-512.png"
-                width = "40" align="center"> Place My Order!</button>
+
+
 
             </form>
+            <div id="orders">
+                <button type="submit" class="button button2" id="submit_button" v-on:click="markDone('contact_id')"><img src="https://cdn1.iconfinder.com/data/icons/ios-edge-line-3/25/Delivered-512.png"
+                                                                                                                 width = "40" align="center"> Place My Order!</button>
+            </div>
+            <div id="Current_Order">
+                {{ CurrentOrder }}
+            </div>
+
         </main>
     </section>
 </div>

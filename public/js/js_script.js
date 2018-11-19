@@ -8,6 +8,8 @@ function main(){
         addTitle(menuitem.name, "item"+index);
         addImage(menuitem.img, menuitem.name, "item"+index);
         addIngredients(menuitem.kCal, menuitem.lactose, menuitem.gluten, menuitem.ingredients, "item"+index);
+        addCheckboxTitle("item"+index);
+        addCheckbox("item"+index, "checkbox"+index, menuitem.name);
 
     }
 }
@@ -21,10 +23,8 @@ function addItem(id){
 
 function addTitle (name, parent_id) {
     var newDiv, newSpan, newContent;
-    // create a new div element
     newDiv = document.createElement("div");
     newDiv.setAttribute("class","fixed");
-    // and give it some content
     newSpan = document.createElement("span");
     newSpan.setAttribute("class","bn");
     newContent = document.createTextNode(name);
@@ -88,8 +88,29 @@ function addIngredients (kcal, lactose, gluten, ingredients, parent_id) {
     document.getElementById(parent_id).appendChild(newList);
 
 }
-
+function addCheckboxTitle(parent_id){
+    var newDiv, newInput;
+    newDiv = document.createElement("div");
+    newDiv.setAttribute("class","fixed");
+    newInput = document.createTextNode("Add to Order");
+    newDiv.appendChild(newInput);
+    document.getElementById(parent_id).appendChild(newDiv);
+}
+function addCheckbox(parent_id, checkbox_id, name){
+    var newDiv, newInput;
+    newDiv = document.createElement("div");
+    newDiv.setAttribute("class","fixed");
+    newInput = document.createElement("input");
+    newInput.setAttribute("type","checkbox");
+    newInput.setAttribute("id",checkbox_id);
+    newInput.setAttribute("name",checkbox_id);
+    newInput.setAttribute("value", name);
+    newDiv.appendChild(newInput);
+    document.getElementById(parent_id).appendChild(newDiv);
+}
 main();
 
+// var myButton = document.getElementbyId('submit_button');
 
 
+//elements[""].value
