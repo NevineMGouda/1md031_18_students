@@ -1,5 +1,4 @@
 
-
 function main(){
     var index, menuitem;
     for (index in menulist){
@@ -13,7 +12,6 @@ function main(){
 
     }
 }
-
 
 function addItem(id){
     var newDiv = document.createElement("div");
@@ -33,6 +31,7 @@ function addTitle (name, parent_id) {
     document.getElementById(parent_id).appendChild(newDiv);
 
 }
+
 function addImage (img_src, title, parent_id) {
     var newDiv, newImg;
     newDiv = document.createElement("div");
@@ -45,6 +44,7 @@ function addImage (img_src, title, parent_id) {
     document.getElementById(parent_id).appendChild(newDiv);
 
 }
+
 function addIngredients (kcal, lactose, gluten, ingredients, parent_id) {
     var newDiv, newList, newItem, newSpan, i_index, newContent;
     newDiv = document.createElement("div");
@@ -84,10 +84,10 @@ function addIngredients (kcal, lactose, gluten, ingredients, parent_id) {
 
     }
 
-
     document.getElementById(parent_id).appendChild(newList);
 
 }
+
 function addCheckboxTitle(parent_id){
     var newDiv, newInput;
     newDiv = document.createElement("div");
@@ -96,6 +96,7 @@ function addCheckboxTitle(parent_id){
     newDiv.appendChild(newInput);
     document.getElementById(parent_id).appendChild(newDiv);
 }
+
 function addCheckbox(parent_id, checkbox_id, name){
     var newDiv, newInput;
     newDiv = document.createElement("div");
@@ -109,8 +110,3 @@ function addCheckbox(parent_id, checkbox_id, name){
     document.getElementById(parent_id).appendChild(newDiv);
 }
 main();
-
-// var myButton = document.getElementbyId('submit_button');
-
-
-//elements[""].value

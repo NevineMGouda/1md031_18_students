@@ -4,10 +4,15 @@
 
 
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/deli-very.css">
+<script src="/socket.io/socket.io.js" defer></script>
 <script src="js/menu.js"></script>
 <script src="https://vuejs.org/js/vue.js"></script>
 <script src="js/js_script.js" defer></script>
 <script src="js/vue_script.js" defer></script>
+<script src="/vue/vue.js" defer></script>
+
+<!--<script src="js/deli-very.js" defer></script>-->
 
     <link rel="icon"
       type="image/png"
@@ -19,6 +24,7 @@
 
 </head>
 
+
 <body>
 
 <ul id="nb">
@@ -27,7 +33,7 @@
     <li><a href="#contact">Contact Information</a></li>
 </ul>
 
-<div style="margin-left:20%;padding:1px 5px;height:1000px;">
+<div style="margin-left:20%;padding:1px 5px;height:1000px;" id = "submit_button">
     <section id="welcome">
         <div>
             <img id="wim" src="https://d2yk4sockbjvo.cloudfront.net/wp-content/uploads/2015/02/umami-burger-location-santa-monica-1-1.jpg"
@@ -57,15 +63,15 @@
                         <label for="email">Email</label><br>
                         <input type="email" id="email" name="em" required="required" placeholder="E-mail Address" maxlength="50">
                     </p>
-                    <p>
-                        <label for="street">Street</label><br>
+                    <!--<p>-->
+                        <!--<label for="street">Street</label><br>-->
 
-                        <input type="text" id="street" name="sn" placeholder="Street Name" required="required">
-                    </p>
-                    <p>
-                        <label for="house">House</label><br>
-                        <input type="text" id="house" name="hn" placeholder="House Number" required="required">
-                    </p>
+                        <!--<input type="text" id="street" name="sn" placeholder="Street Name" required="required">-->
+                    <!--</p>-->
+                    <!--<p>-->
+                        <!--<label for="house">House</label><br>-->
+                        <!--<input type="text" id="house" name="hn" placeholder="House Number" required="required">-->
+                    <!--</p>-->
                     <p>
                         <label for="payment">Payment Method</label><br>
                         <select id="payment" name="pm" required>
@@ -76,6 +82,24 @@
                             <option>Digital Wallet</option>
                         </select>
                     </p>
+                    <p>
+                        Please indicate point of delivery:
+                    </p>
+                    <div class="view-box">
+                        <!--<div id="dots" v-on:click="addOrder">-->
+                            <!--<div-->
+                                    <!--v-for="(order, key) in orders"-->
+                                    <!--v-bind:style="{ left: order.details.x + 'px', top: order.details.y + 'px'}">-->
+                                <!--{{key}}-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <div id="dotss" v-on:click="setLocation">
+                            <div v-if="Object.keys(maplocation).length !== 0"
+                                 v-bind:style="{ left: maplocation.x + 'px', top: maplocation.y + 'px'}">
+                                T
+                            </div>
+                        </div>
+                    </div>
                     <p>
                         <h4>Gender</h4>
                         <input type="radio" id="male" name="gender" value="male">
@@ -96,11 +120,23 @@
 
             </form>
             <div id="orders">
-                <button type="submit" class="button button2" id="submit_button" v-on:click="markDone('contact_id')"><img src="https://cdn1.iconfinder.com/data/icons/ios-edge-line-3/25/Delivered-512.png"
-                                                                                                                 width = "40" align="center"> Place My Order!</button>
+                <button type="submit" class="button button2" v-on:click="markDone('contact_id');addToOrder()">
+                    <img src="https://cdn1.iconfinder.com/data/icons/ios-edge-line-3/25/Delivered-512.png"
+                         width = "40" align="center">
+                    Place My Order!</button>
             </div>
-            <div id="Current_Order">
-                {{ CurrentOrder }}
+            <div >
+                <h2 v-if="orderPlaced===true">Order Confirmation</h2>
+
+                <h3 v-if="orderPlaced===true">Customer Details</h3>
+                <div v-for="(info, fieldKey) in CurrentOrder">
+                    {{fieldKey}}: {{info}}<br>
+                </div>
+                <h3 v-if="orderPlaced===true">Order Summary</h3>
+                <ul v-for="(info, fieldKey) in items">
+                    <li>{{info}}</li>
+                </ul>
+
             </div>
 
         </main>
